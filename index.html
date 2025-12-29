@@ -1,112 +1,185 @@
 <!DOCTYPE html>
-<html lang="fa">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>modern login form</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <title>Luxury Watch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            direction: rtl;
-        }
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Vazirmatn:wght@300;500;700&display=swap" rel="stylesheet">
 
-        .login-box {
-            background-color: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            max-width: 400px;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .login-box h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #333;
-        }
+    body {
+      font-family: 'Poppins', 'Vazirmatn', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      min-height: 100vh;
+    }
 
-        .login-box input[type="text"],
-        .login-box input[type="password"] {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 10%;
+    }
 
-        .login-box input:focus {
-            border-color: #74ebd5;
-            outline: none;
-        }
+    .logo {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
 
-        .login-box button {
-            width: 100%;
-            padding: 12px;
-            background-color: #74ebd5;
-            border: none;
-            border-radius: 8px;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+    .lang-btn {
+      background: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
 
-        .login-box button:hover {
-            background-color: #57c5b6;
-        }
+    .lang-btn:hover {
+      background: #fff;
+      color: #000;
+    }
 
-        .login-box .footer {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 14px;
-            color: #666;
-        }
-        .login-box .p:hover {
-           background-color:#635e5e ;
-           background-clip: text;
-        }
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 10%;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
 
-        .login-box .footer a {
-            color: #74ebd5;
-            text-decoration: none;
-        }
+    .hero-text {
+      max-width: 500px;
+    }
 
-        .login-box .footer a:hover {
-            background-color: #57c5b6;
-            background-clip: text;
+    .hero-text h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
 
-        }
-    </style>
+    .hero-text p {
+      font-size: 18px;
+      line-height: 1.8;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+
+    .cta-btn {
+      background: #f1c40f;
+      color: #000;
+      padding: 14px 32px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+      background: #ffd84d;
+      transform: scale(1.05);
+    }
+
+    .hero-img img {
+      width: 350px;
+      max-width: 100%;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      opacity: 0.6;
+      font-size: 14px;
+    }
+
+    /* RTL Support */
+    body.rtl {
+      direction: rtl;
+      font-family: 'Vazirmatn', sans-serif;
+    }
+
+    body.rtl header,
+    body.rtl .hero {
+      flex-direction: row-reverse;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        text-align: center;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 
-<body dir="rtl">
-    <div class="login-box">
-        <h2>login to your account</h2>
-        <form>
-            <input type="text" placeholder="Username" required>
-            <input type="password" placeholder=" password" required>
-            <button type="submit">login</button>
-        </form>
-        <div class="footer">
-            <div class="p">
-            ?you do not have an account
-            </div>
-            <a href="#">Register</a>
-        </div>
-    </div>
-</body>
+<body>
 
+<header>
+  <div class="logo" id="logo-text">LUXWATCH</div>
+  <button class="lang-btn" onclick="toggleLanguage()">FA / EN</button>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1 id="title">Timeless Luxury Watch</h1>
+    <p id="desc">
+      Experience elegance and precision in every second. Designed for those who value style, power, and perfection.
+    </p>
+    <a href="#" class="cta-btn" id="cta">Shop Now</a>
+  </div>
+
+  <div class="hero-img">
+    <img src="./images.jpg" alt="Watch" style="border-radius: 10px; object-fit: cover; ">
+  </div>
+</section>
+
+<footer id="footer">
+  © 2025 Luxury Watch. All rights reserved.
+</footer>
+
+<script>
+  let isEnglish = true;
+
+  function toggleLanguage() {
+    const body = document.body;
+
+    if (isEnglish) {
+      body.classList.add("rtl");
+      document.documentElement.lang = "fa";
+
+      document.getElementById("title").innerText = "ساعت لوکس، فراتر از زمان";
+      document.getElementById("desc").innerText =
+        "ترکیبی از ظرافت، دقت و قدرت. طراحی شده برای کسانی که به جزئیات اهمیت می‌دهند.";
+      document.getElementById("cta").innerText = "خرید کن";
+      document.getElementById("footer").innerText =
+        "© 2025 ساعت لوکس. تمامی حقوق محفوظ است.";
+
+    } else {
+      body.classList.remove("rtl");
+      document.documentElement.lang = "en";
+
+      document.getElementById("title").innerText = "Timeless Luxury Watch";
+      document.getElementById("desc").innerText =
+        "Experience elegance and precision in every second. Designed for those who value style, power, and perfection.";
+      document.getElementById("cta").innerText = "Shop Now";
+      document.getElementById("footer").innerText =
+        "© 2025 Luxury Watch. All rights reserved.";
+    }
+
+    isEnglish = !isEnglish;
+  }
+</script>
+
+</body>
 </html>
