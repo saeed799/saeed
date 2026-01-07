@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>landingpage2</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body dir="ltr" id="body">
+
+    <section class="section-box-landingpage">
+
+        <header class="header-first-box">
+
+            <nav class="nav-link">
+                <ul  class="ul-first-tag-nav">
+                    <li type="none" class="libox" data-en="About us" data-fa="درباره ما">About us</li>
+                    <li type="none" class="libox" data-en="Our products" data-fa="محصولات ما">Our products</li>
+                    <li type="none" class="libox" data-en="Contact us" data-fa="تماس با ما">Contact us</li>
+                    <li type="none" class="libox" data-en="Home" data-fa="خانه">Home</li>
+                </ul>
+            </nav>
+
+            <!-- Language Button -->
+            <button class="lang-btn" onclick="toggleLang()">FA / EN</button>
+
+        </header>
+
+        <h1 data-en="Our products" data-fa="محصولات ما">Our products</h1>
+
+        <main class="main-box-posttag">
+
+            <div class="box-propaganda-1">
+                <img class="imgbox-1" src="./img/coffe.aim_.jpg" alt="pictuare1">
+                <h3 data-en="Product number 1" data-fa="محصول شماره ۱">Product number 1</h3>
+                <p class="pbox" data-en="Price: 100 Dollars ($)" data-fa="قیمت: ۱۰۰ دلار">Price: 100 Dollars ($)</p>
+                <button class="buttonbox" data-en="Purchase" data-fa="خرید">Purchase</button>
+            </div>
+
+            <div class="box-propaganda-1">
+                <img class="imgbox-1" src="./img/images.jpg" alt="pictuare1">
+                <h3 data-en="Product number 2" data-fa="محصول شماره ۲">Product number 2</h3>
+                <p class="pbox" data-en="Price: 150 Dollars ($)" data-fa="قیمت: ۱۵۰ دلار">Price: 150 Dollars ($)</p>
+                <button class="buttonbox" data-en="Purchase" data-fa="خرید">Purchase</button>
+            </div>
+
+            <div class="box-propaganda-1">
+                <img class="imgbox-1" src="./img/images2.jpg" alt="pictuare1">
+                <h3 data-en="Product number 3" data-fa="محصول شماره ۳">Product number 3</h3>
+                <p class="pbox" data-en="Price: 200 Dollars ($)" data-fa="قیمت: ۲۰۰ دلار">Price: 200 Dollars ($)</p>
+                <button class="buttonbox" data-en="Purchase" data-fa="خرید">Purchase</button>
+            </div>
+
+        </main>
+
+        <footer data-en="All rights reserved 2023" data-fa="تمامی حقوق محفوظ است © ۲۰۲۳">
+            All rights reserved 2023
+        </footer>
+
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        let currentLang = "en";
+
+        function toggleLang() {
+            const elements = document.querySelectorAll("[data-en]");
+            const body = document.getElementById("body");
+
+            if (currentLang === "en") {
+                elements.forEach(el => el.innerText = el.dataset.fa);
+                body.dir = "rtl";
+                currentLang = "fa";
+            } else {
+                elements.forEach(el => el.innerText = el.dataset.en);
+                body.dir = "ltr";
+                currentLang = "en";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
